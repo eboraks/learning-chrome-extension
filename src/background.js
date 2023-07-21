@@ -21,5 +21,12 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     //  To do something
     console.log(request.data.subject)
     console.log(request.data.content)
+    console.log('message sender: ' + sender)
+    sendResponse({ msg: 'response from background.js' })
   }
+})
+
+chrome.tabs.onActivated.addListener(async ({ tabId }) => {
+  const { path } = await chrome.sidePanel.getOptions({ tabId })
+  console.log('tabId: ' + tabId + 'path: ' + path)
 })

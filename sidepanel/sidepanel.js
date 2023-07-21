@@ -18,10 +18,15 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   }
 })
 
-chrome.runtime.sendMessage({
-  msg: 'side_panel_loaded',
-  data: {
-    subject: 'Side Panel',
-    content: 'The side panel loaded!',
+chrome.runtime.sendMessage(
+  {
+    msg: 'side_panel_loaded',
+    data: {
+      subject: 'Side Panel',
+      content: 'The side panel loaded!',
+    },
   },
-})
+  (response) => {
+    console.log(response)
+  }
+)
