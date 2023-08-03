@@ -6,7 +6,7 @@
   "icons": {
     "16": "img/icons8-brain-50.png",
     "48": "img/icons8-brain-50.png",
-    "128": "img/icons8-brain-50.png"
+    "128": "img/icons8-term-48.png"
   },
   "action": {
     "default_icon": "img/icons8-brain-50.png",
@@ -18,16 +18,7 @@
   "side_panel": {
     "default_path": "sidepanel/sidepanel.html"
   },
-  "permissions": ["tabs", "sidePanel"],
-  "content_scripts": [
-    {
-      "matches": ["https://bergum.medium.com/*"],
-      "css": ["style/contentScript.css", "style/style.css"],
-      "js": ["sidepanel/sidepanel.js"],
-      "run_at": "document_end",
-      "all_frames": true
-    }
-  ],
+  "permissions": ["tabs", "sidePanel", "storage"],
   "web_accessible_resources": [
     {
       "resources": ["img/*.png"],
